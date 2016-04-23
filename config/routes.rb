@@ -1,11 +1,6 @@
 Rails.application.routes.draw do
-  # get  'messages/index' # => MessagesControllerのindexアクションを呼ぶ
-  
   root 'messages#index'
-  
-  # post 'messages' => 'messages#create'
-  resources :messages
-  # resources :messages , only: [:create]
+  resources :messages , except: [:index, :new]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
